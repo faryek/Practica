@@ -4,10 +4,335 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <title>D&Dgen</title>
+    <link rel="stylesheet" href="style.css">
+    <title>D&DGen</title>
 </head>
 <body>
+    <div class="container">
+        <div class="container text-center">
+            <div class="row">
+              <div class="col-sm-9">
+                <div class="row">
+                  <div class="col-8 col-sm-6">
+                    <div class="row text-end">
+                        <h1 class="project_name">dndGenerator</h1>
+                        <h2 class="project_slogan">roll the dice</h2>
+                        <div class="col">
+                            <button type="button" class="button">Главная</button>
+                            <button type="button" class="button">Генератор</button>
+                            <button type="button" class="button">О нас</button>
+                        </div>
+                    </div>            
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <img class="col-5" src="./Img/Logo.svg" alt="Logo">
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="container text-start">
+      <div class="row">
+        <div class="col-1">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Раса
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">Гном</button></li>
+              <li><button class="dropdown-item" type="button">Дварф</button></li>
+              <li><button class="dropdown-item" type="button">Драконорожденный</button></li>
+              <li><button class="dropdown-item" type="button">Полуорк</button></li>
+              <li><button class="dropdown-item" type="button">полурослик</button></li>
+              <li><button class="dropdown-item" type="button">Полуэльф</button></li>
+              <li><button class="dropdown-item" type="button">Тифлинг</button></li>
+              <li><button class="dropdown-item" type="button">Человек</button></li>
+              <li><button class="dropdown-item" type="button">Эльф</button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Класс
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">Бард</button></li>
+              <li><button class="dropdown-item" type="button">Варвар</button></li>
+              <li><button class="dropdown-item" type="button">Воин</button></li>
+              <li><button class="dropdown-item" type="button">Волшебник</button></li>
+              <li><button class="dropdown-item" type="button">Друид</button></li>
+              <li><button class="dropdown-item" type="button">Жрец</button></li>
+              <li><button class="dropdown-item" type="button">Изобретатель</button></li>
+              <li><button class="dropdown-item" type="button">Колдун</button></li>
+              <li><button class="dropdown-item" type="button">Монах</button></li>
+              <li><button class="dropdown-item" type="button">Паладин</button></li>
+              <li><button class="dropdown-item" type="button">Плут</button></li>
+              <li><button class="dropdown-item" type="button">Следопыт</button></li>
+              <li><button class="dropdown-item" type="button">Чародей</button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Уровень
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">1</button></li>
+              <li><button class="dropdown-item" type="button">2</button></li>
+              <li><button class="dropdown-item" type="button">3</button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-7 text-end">
+          <div class="action">
+            <button class="btn btn-success" type="button">Генерация</button>
+          </div>
+        </div>
+        <div class="col text-start">
+          <div class="action">
+            <button class="btn btn-info" type="button">Импорт в LSS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="nav nav-tabs" id="tab-example" role="tablist">
+      <li class="nav-item">
+          <a class="nav-link active" id="first-tab" data-toggle="tab"
+             href="#first-tab-content" role="tab" aria-controls="first-tab-content"
+             aria-selected="true">Статы</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" id="second-tab" data-toggle="tab"
+             href="#second-tab-content" role="tab" aria-controls="second-tab-content"
+             aria-selected="false">Умения и способности</a>
+      </li>
+  </ul>
+  
+  <div class="tab-content" id="tab-content-example">
+      <div class="tab-pane fade show active" id="first-tab-content" role="tabpanel"
+           aria-labelledby="first-tab">
+            <div class="container text-start">
+              <div class="row row-cols-3">
+                <div class="col">
+                  <div class="field-background">
+                    <div class="row">
+                      <h4>Значения Характеристик:</h4>
+                      <h5>Всего: ( 83 )</h5>
+                        <p>Сила: [ 2 ] ( 14 )</p>
+                        <p>Ловкость: [ 3 ] (16)</p>
+                        <p>Телосложение: [ 1 ] (12)</p>
+                        <p>Интеллект: [ 2 ] (14)</p>
+                        <p>Мудрость: [ 1 ] (13)</p>
+                        <p>Харизма: [ 2 ] (14)</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="field-background">
+                    <div class="row">
+                      <h4>Хиты: [ 9 ]</h4>
+                      <h5>Кость Хитов: [ 1к8 ]</h5>
+                        <p>Всего Костей Хитов:[ 1 ]</p>
+                        <p>Вдохновение: [ Нет ]</p>
+                        <p>Бонус мастерства: [ +2 ]</p>
+                        <p>Пассивная мудрость (Восприятие): [ 13 ]</p>
+                        <p>Доспех: [ "Кожаный доспех" ]</p>
+                        <p>Класс Доспеха: [ 14 ]</p>
+                        <p>Инициатива: [ D20 + мод_ЛОВ ]</p>
+                        <p>Скорость: [ 30 ]</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="field-background">
+                    <div class="row">
+                      <h4>Монеты:</h4>
+                      <h5>Всего денег (в золоте) [ 10 ]</h5>
+                        <p>Медные монеты: [ 0 ]</p>
+                        <p>Серебряные монеты: [ 0 ]</p>
+                        <p>Золотые монеты: [ 10 ]</p>
+                        <p>Электромовые монеты: [ 0 ]</p>
+                        <p>Платиновые монеты: [ 0 ]</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="field-background">
+                    <div class="row">
+                      <h4>Навыки:</h4>
+                        <p>[ 5 ] Акробатика (Лов)</p>
+                        <p>[ 2 ] Анализ (Инт)</p>
+                        <p>[ 2 ] Атлетика (Сил)</p>
+                        <p><b>[ 3 ] Восприятие (Муд)</b></p>
+                        <p>[ 5 ] Выживание (Муд)</p>
+                        <p>[ 4 ] Выступление (Хар)</p>
+                        <p>[ 4 ] Запугивание (Хар)</p>
+                        <p>[ 2 ] История (Инт)</p>
+                        <p><b>[ 3 ] Ловкость рук (Лов)</b></p>
+                        <p>[ 2 ] Магия (Инт)</p>
+                        <p>[ 1 ] Медицина (Муд)</p>
+                        <p>[ 2 ] Обман (Хар)</p>
+                        <p>[ 2 ] Природа (Инт)</p>
+                        <p>[ 1 ] Проницательность (Муд)</p>
+                        <p>[ 2 ] Религия (Инт)</p>
+                        <p><b>[ 3 ] Скрытность (Лов)</b></p>
+                        <p><b>[ 6 ] Убеждение (Хар)</b></p>
+                        <p>[ 1 ] Уход за животными (Муд)</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="field-background">
+                    <div class="row">
+                      <h4>Хиты: [ 9 ]</h4>
+                      <h5>Кость Хитов: [ 1к8 ]</h5>
+                        <p>Всего Костей Хитов:[ 1 ]</p>
+                        <p>Вдохновение: [ Нет ]</p>
+                        <p>Бонус мастерства: [ +2 ]</p>
+                        <p>Пассивная мудрость (Восприятие): [ 13 ]</p>
+                        <p>Доспех: [ "Кожаный доспех" ]</p>
+                        <p>Класс Доспеха: [ 14 ]</p>
+                        <p>Инициатива: [ D20 + мод_ЛОВ ]</p>
+                        <p>Скорость: [ 30 ]</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="field-background">
+                    <div class="row">
+                      <h4>Монеты:</h4>
+                      <h5>Всего денег (в золоте) [ 10 ]</h5>
+                        <p>Медные монеты: [ 0 ]</p>
+                        <p>Серебряные монеты: [ 0 ]</p>
+                        <p>Золотые монеты: [ 10 ]</p>
+                        <p>Электромовые монеты: [ 0 ]</p>
+                        <p>Платиновые монеты: [ 0 ]</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+      </div>
+      <div class="tab-pane fade" id="second-tab-content" role="tabpanel"
+           aria-labelledby="second-tab" data-toggle="tab">
+           <div class="container text-start">
+            <div class="row row-cols-3">
+              <div class="col">
+                <div class="field-background">
+                  <div class="row">
+                    <h4>Снаряжение:</h4>
+                      <p>Снаряжение от предыстории:</p>
+                      <p>[Посох, Капкан, Трофей с убитого животного, Комплект дорожной одежды, Поясной кошель с 10 зм]</p>
+                      <p>Снаряжение от класса:</p>
+                      <p>[Короткий меч, Короткий меч, Набор исследователя подземелий, Кожаный доспех, Кинжал (2), Воровские инструменты]</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="field-background">
+                  <div class="row">
+                    <h4>Хиты: [ 9 ]</h4>
+                    <h5>Кость Хитов: [ 1к8 ]</h5>
+                      <p>Всего Костей Хитов:[ 1 ]</p>
+                      <p>Вдохновение: [ Нет ]</p>
+                      <p>Бонус мастерства: [ +2 ]</p>
+                      <p>Пассивная мудрость (Восприятие): [ 13 ]</p>
+                      <p>Доспех: [ "Кожаный доспех" ]</p>
+                      <p>Класс Доспеха: [ 14 ]</p>
+                      <p>Инициатива: [ D20 + мод_ЛОВ ]</p>
+                      <p>Скорость: [ 30 ]</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="field-background">
+                  <div class="row">
+                    <h4>Монеты:</h4>
+                    <h5>Всего денег (в золоте) [ 10 ]</h5>
+                      <p>Медные монеты: [ 0 ]</p>
+                      <p>Серебряные монеты: [ 0 ]</p>
+                      <p>Золотые монеты: [ 10 ]</p>
+                      <p>Электромовые монеты: [ 0 ]</p>
+                      <p>Платиновые монеты: [ 0 ]</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="field-background">
+                  <div class="row">
+                    <h4>Навыки:</h4>
+                      <p>[ 5 ] Акробатика (Лов)</p>
+                      <p>[ 2 ] Анализ (Инт)</p>
+                      <p>[ 2 ] Атлетика (Сил)</p>
+                      <p><b>[ 3 ] Восприятие (Муд)</b></p>
+                      <p>[ 5 ] Выживание (Муд)</p>
+                      <p>[ 4 ] Выступление (Хар)</p>
+                      <p>[ 4 ] Запугивание (Хар)</p>
+                      <p>[ 2 ] История (Инт)</p>
+                      <p><b>[ 3 ] Ловкость рук (Лов)</b></p>
+                      <p>[ 2 ] Магия (Инт)</p>
+                      <p>[ 1 ] Медицина (Муд)</p>
+                      <p>[ 2 ] Обман (Хар)</p>
+                      <p>[ 2 ] Природа (Инт)</p>
+                      <p>[ 1 ] Проницательность (Муд)</p>
+                      <p>[ 2 ] Религия (Инт)</p>
+                      <p><b>[ 3 ] Скрытность (Лов)</b></p>
+                      <p><b>[ 6 ] Убеждение (Хар)</b></p>
+                      <p>[ 1 ] Уход за животными (Муд)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="field-background">
+                  <div class="row">
+                    <h4>Хиты: [ 9 ]</h4>
+                    <h5>Кость Хитов: [ 1к8 ]</h5>
+                      <p>Всего Костей Хитов:[ 1 ]</p>
+                      <p>Вдохновение: [ Нет ]</p>
+                      <p>Бонус мастерства: [ +2 ]</p>
+                      <p>Пассивная мудрость (Восприятие): [ 13 ]</p>
+                      <p>Доспех: [ "Кожаный доспех" ]</p>
+                      <p>Класс Доспеха: [ 14 ]</p>
+                      <p>Инициатива: [ D20 + мод_ЛОВ ]</p>
+                      <p>Скорость: [ 30 ]</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="field-background">
+                  <div class="row">
+                    <h4>Монеты:</h4>
+                    <h5>Всего денег (в золоте) [ 10 ]</h5>
+                      <p>Медные монеты: [ 0 ]</p>
+                      <p>Серебряные монеты: [ 0 ]</p>
+                      <p>Золотые монеты: [ 10 ]</p>
+                      <p>Электромовые монеты: [ 0 ]</p>
+                      <p>Платиновые монеты: [ 0 ]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+      </div>
+  </div>
+        
     
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-4">
+          <button class="btn btn-light" type="button" disabled>Предыдущая</button>
+        </div>
+        <div class="col-4">
+          <span class="current-page">1/2</span>
+        </div>
+        <div class="col-4">
+          <button class="btn btn-light" type="button">Следующая</button>
+        </div>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

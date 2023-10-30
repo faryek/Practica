@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "IrishGrover-Regular";
+    src: url("Fonts/IrishGrover-Regular.ttf");
+    font-family: "Ruda";
+    src: url("Fonts/Ruda.ttf");
+}
+
+body {
+    background: linear-gradient(180deg, #8E0000 0%, rgb(39, 39, 39) 100%);
+}
+
+p {
+    margin: 0 auto;
+    padding: auto;
+}
+
+h1, h2 {
+    font-family: "IrishGrover-Regular";
+    text-align: end;
+}
+.button {
+    border-radius: 15px;
+    border-right: 4px solid #000;
+    border-bottom: 4px solid #000;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(206, 117, 117, 0.70) 100%);
+    color: black;
+    box-shadow: 9px 7px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-family: "Ruda";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.dropdown-toggle, .dropdown-item, .dropdown-menu {
+    background: #D9D9D9;
+    color: #000;
+    text-align: center;
+    font-family: Ruda;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.dropdown {
+    padding-top: 55px;
+}
+
+.dropdown-item {
+    text-align: start;
+}
+
+.action {
+    padding: 6px 12px;
+    padding-top: 55px;
+}
+
+.field-background {
+    padding-left: 6px;
+    margin-bottom: 12px;
+    background-color: #ECE4D9;
+    min-height: 500px;
+}
+
+.current-page {
+    color: #FFF;
+    text-align: center;
+    font-family: Ruda;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btn-light {
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #606060;
+}

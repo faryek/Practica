@@ -1,8 +1,11 @@
 @font-face {
     font-family: "IrishGrover-Regular";
     src: url("Fonts/IrishGrover-Regular.ttf");
+}
+
+@font-face {
     font-family: "Ruda";
-    src: url("Fonts/Ruda.ttf");
+    src: url("./Fonts/Ruda.ttf");
 }
 
 body {
@@ -15,7 +18,7 @@ p {
 }
 
 h1, h2 {
-    font-family: "IrishGrover-Regular";
+    font-family: 'IrishGrover-Regular';
     text-align: end;
 }
 .button {

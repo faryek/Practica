@@ -21,9 +21,9 @@
                         <h1 class="project_name">dndGenerator</h1>
                         <h2 class="project_slogan">roll the dice</h2>
                         <div class="col">
-                            <button type="button" class="button">Главная</button>
-                            <button type="button" class="button">Генератор</button>
-                            <button type="button" class="button">О нас</button>
+                            <button type="button" class="btn btn-light">Главная</button>
+                            <button type="button" class="btn btn-light">Генератор</button>
+                            <button type="button" class="btn btn-light">О нас</button>
                         </div>
                     </div>            
                   </div>
@@ -101,27 +101,21 @@
         </div>
       </div>
     </div>
-    <ul class="nav nav-tabs" id="tab-example" role="tablist">
-      <li class="nav-item">
-          <a class="nav-link active" id="first-tab" data-toggle="tab"
-             href="#first-tab-content" role="tab" aria-controls="first-tab-content"
-             aria-selected="true">Статы</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" id="second-tab" data-toggle="tab"
-             href="#second-tab-content" role="tab" aria-controls="second-tab-content"
-             aria-selected="false">Умения и способности</a>
-      </li>
-  </ul>
+    <div class="container">
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#first-tab-content" type="button" role="tab" aria-controls="first-tab-content" aria-selected="true">Статы</button>
+        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#second-tab-content" type="button" role="tab" aria-controls="second-tab-conten" aria-selected="false">Личность</button>
+        </div>
+      </div>
   
   <div class="tab-content" id="tab-content-example">
       <div class="tab-pane fade show active" id="first-tab-content" role="tabpanel"
            aria-labelledby="first-tab">
             <div class="container text-start">
-              <div class="row row-cols-3">
+              <div class="row">
                 <div class="col">
                   <div class="field-background">
-                    <div class="row">
+                    <div class="row" style="padding-left: 10px; padding-top: 10px;">
                       <h4>Значения Характеристик:</h4>
                       <h5>Всего: ( 83 )</h5>
                         <p>Сила: [ 2 ] ( 14 )</p>
@@ -135,7 +129,7 @@
                 </div>
                 <div class="col">
                   <div class="field-background">
-                    <div class="row">
+                    <div class="row" style="padding-left: 10px; padding-top: 10px;">
                       <h4>Хиты: [ 9 ]</h4>
                       <h5>Кость Хитов: [ 1к8 ]</h5>
                         <p>Всего Костей Хитов:[ 1 ]</p>
@@ -151,7 +145,7 @@
                 </div>
                 <div class="col">
                   <div class="field-background">
-                    <div class="row">
+                    <div class="row" style="padding-left: 10px; padding-top: 10px;">
                       <h4>Монеты:</h4>
                       <h5>Всего денег (в золоте) [ 10 ]</h5>
                         <p>Медные монеты: [ 0 ]</p>
@@ -162,9 +156,10 @@
                     </div>
                   </div>
                 </div>
+                <div class="w-100"></div>
                 <div class="col">
                   <div class="field-background">
-                    <div class="row">
+                    <div class="row" style="padding-left: 10px; padding-top: 10px;">
                       <h4>Навыки:</h4>
                         <p>[ 5 ] Акробатика (Лов)</p>
                         <p>[ 2 ] Анализ (Инт)</p>
@@ -189,7 +184,7 @@
                 </div>
                 <div class="col">
                   <div class="field-background">
-                    <div class="row">
+                    <div class="row" style="padding-left: 10px; padding-top: 10px;">
                       <h4>Хиты: [ 9 ]</h4>
                       <h5>Кость Хитов: [ 1к8 ]</h5>
                         <p>Всего Костей Хитов:[ 1 ]</p>
@@ -205,7 +200,7 @@
                 </div>
                 <div class="col">
                   <div class="field-background">
-                    <div class="row">
+                    <div class="row" style="padding-left: 10px; padding-top: 10px;">
                       <h4>Монеты:</h4>
                       <h5>Всего денег (в золоте) [ 10 ]</h5>
                         <p>Медные монеты: [ 0 ]</p>
@@ -222,7 +217,7 @@
       <div class="tab-pane fade" id="second-tab-content" role="tabpanel"
            aria-labelledby="second-tab" data-toggle="tab">
            <div class="container text-start">
-            <div class="row row-cols-3">
+            <div class="row">
               <div class="col">
                 <div class="field-background">
                   <div class="row">
@@ -237,7 +232,7 @@
               <div class="col">
                 <div class="field-background">
                   <div class="row">
-                    <h4>Хиты: [ 9 ]</h4>
+                    <h4>Хиты1: [ 9 ]</h4>
                     <h5>Кость Хитов: [ 1к8 ]</h5>
                       <p>Всего Костей Хитов:[ 1 ]</p>
                       <p>Вдохновение: [ Нет ]</p>
@@ -263,6 +258,7 @@
                   </div>
                 </div>
               </div>
+              <div class="w-100"></div>
               <div class="col">
                 <div class="field-background">
                   <div class="row">
@@ -321,8 +317,6 @@
             </div>
       </div>
   </div>
-        
-    
     <div class="container">
       <div class="row text-center">
         <div class="col-4">
@@ -336,6 +330,42 @@
         </div>
       </div>
     </div>
+    <div style="background-color: #28005067; height: 6px; width: 100%; margin-top: 140px;"></div>
+  <div class="container d-flex p-0" style="max-width: 100%;">
+    <div class="row text-center align-items-center w-100" style="min-height: 180px; justify-content: center; background-image: linear-gradient(to bottom, #323232, #000);">
+      <div class="col">
+        <p style="color: white;">Главная</p>
+      </div>
+      <div class="col">
+        <p style="color: white;">Генератор</p>
+      </div>
+      <div class="col">
+        <p style="color: white;">О нас</p>
+      </div>
+      <div class="col">
+        <div class="row" style="align-items: stretch;">
+          <div class="col">
+            <p style="color: white;">dndgen@mail.ru</p>
+            <p style="color: white;">+7 800 555 35 35</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <div class="col-4 p-0">
+            <img src="./Img/disc.svg" alt="discord">
+          </div>
+          <div class="col-4 p-0">
+            <img src="./Img/vk.svg" alt="vk">
+          </div>
+          <div class="col-4 p-0">
+            <img src="./Img/Logo.svg" alt="logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -43,6 +43,21 @@ function addHealPoint(_diceValue) {
 }
 
 addBackground(gameBackgrounds[generateDice(gameBackgrounds.length, 1)])
+getRace('gnome')
+
+
+function getRace(_raceName) {
+  fetch(`./Race/${_raceName}.json`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("HTTP error " + response.status);
+      }
+      return response.json();
+    })
+    .then(json => {
+      console.log(json)
+    })
+}
 
 function addBackground(_background) {
   function addValue(_id, _value) {

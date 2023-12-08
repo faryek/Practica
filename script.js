@@ -47,7 +47,7 @@ getRace('gnome')
 
 
 function getRace(_raceName) {
-  fetch(`./Race/${_raceName}.json`)
+  fetch(`./Data/Race/${_raceName}.json`)
     .then(response => {
       if (!response.ok) {
         throw new Error("HTTP error " + response.status);
@@ -55,14 +55,30 @@ function getRace(_raceName) {
       return response.json();
     })
     .then(json => {
-      console.log(json)
+      addRace("Раса: " + json.name)
+      addTraits(json.traits, "raceTraits")
+      addTraits(json.subraces[generateDice(json.subraces.length, 1)-1].traits, "subraceTraits")
     })
 }
 
-function addBackground(_background) {
-  function addValue(_id, _value) {
-    document.getElementById(_id).innerHTML = _value
+function addRace(_jsonData) {
+  addValue("race", _jsonData)
+}
+
+function addValue(_id, _value) {
+  document.getElementById(_id).innerHTML = _value
+}
+
+function addTraits (_jsonData, _traitsType) {
+  let resultString = ""
+  let length = _jsonData.length
+  for(let i = 0; i < length; i++) {
+    resultString+= `<b>${i+1}. ${_jsonData[i].name}</b><br> ${_jsonData[i].description}<br>`
   }
+  addValue(_traitsType, resultString)
+}
+
+function addBackground(_background) {
   switch (_background) {
     case "Entertainer":
       addValue("goldValue", `Золотые монеты: [ 15 ]`)

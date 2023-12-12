@@ -3,12 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="D&DGen - это замечательный сайт для генерации персонажей 1 уровня для настольно ролевой игры Dungeons and Dragons 5 редакции.">
+  <meta property="og:title" content="Быстрая генерация персонажа 1 уровня для Dungeons and Dragons без лишних заморочек">
+  <meta property="og:image" content="Img/Logo.svg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="landstyle.css">
   <title>D&DGen</title>
 </head>
 <body>
+  <div class="container">
+    <div class="container text-center">
+        <div class="row">
+          <div class="col-sm-9">
+            <div class="row">
+              <div class="col-8 col-sm-6">
+                <div class="row text-end">
+                    <h1 class="project_name">dndGenerator</h1>
+                    <h2 class="project_slogan">roll the dice</h2>
+                    <div class="col">
+                        <button type="button" class="btn btn-light">Главная</button>
+                        <button type="button" class="btn btn-light">Генератор</button>
+                        <button type="button" class="btn btn-light">О нас</button>
+                    </div>
+                </div>            
+              </div>
+            </div>
+          </div>
 
+          <div class="col-sm-3">
+            <img class="" src="./Img/Logo.svg" alt="Logo">
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="swiper container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <p class="slide1-text">Новейшие технологии рандома уже здесь. Хотите стать волшебником умеющим носить броню, но не умеющим творить в ней заклинания? Тогда вы по адресу!</p>
+        <img class="slide1-img" src="Img/slider-img1.png">
+      </div>
+      <div class="swiper-slide">
+        <img class="slide2-img" src="Img/slider-img2.png">
+      </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div style="background-color: #28005067; height: 6px; width: 100%; margin-top: 140px;"></div>
+  <div class="container d-flex p-0" style="max-width: 100%;">
+    <div class="row text-center align-items-center w-100" style="min-height: 180px; justify-content: center; background-image: linear-gradient(to bottom, #323232, #000);">
+      <div class="col">
+        <p style="color: white;">Главная</p>
+      </div>
+      <div class="col">
+        <p style="color: white;">Генератор</p>
+      </div>
+      <div class="col">
+        <p style="color: white;">О нас</p>
+      </div>
+      <div class="col">
+        <div class="row" style="align-items: stretch;">
+          <div class="col">
+            <p style="color: white;">dndgen@mail.ru</p>
+            <p style="color: white;">+7 800 555 35 35</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <div class="col-4 p-0">
+            <img src="./Img/disc.svg" alt="discord">
+          </div>
+          <div class="col-4 p-0">
+            <img src="./Img/vk.svg" alt="vk">
+          </div>
+          <div class="col-4 p-0">
+            <img src="./Img/Logo.svg" alt="logo">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="landscript.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

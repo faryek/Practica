@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "IrishGrover-Regular";
+    src: url("Fonts/IrishGrover-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Ruda";
+    src: url("./Fonts/Ruda.ttf");
+}
+
+body {
+    background: linear-gradient(180deg, #8E0000 0%, #000 100%);
+}
+
+h1,
+h2 {
+    font-family: 'IrishGrover-Regular';
+    text-align: end;
+}
+
+.button {
+    border-radius: 15px;
+    border-right: 4px solid #000;
+    border-bottom: 4px solid #000;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(206, 117, 117, 0.70) 100%);
+    color: black;
+    box-shadow: 9px 7px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-family: "Ruda";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btn-light {
+    border-radius: 10px;
+    border-width: 0px;
+    background-color: #d5d5ff;
+}
+
+.btn-light:disabled {
+    background-color: #6f6fff;
+    color: #fff;
+}
+
+.nav-tabs .nav-item .nav-link {
+    background-color: #bbbbff;
+    color: black;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+    background-color: #d5d5ff;
+    color: black;
+}
+
+.swiper {
+    width: 1920px;
+    height: 930px;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: row;
+}
+
+.slide1-text {
+    width: 960px;
+    height: 930px;
+    color: #FFF;
+
+    font-family: Irish Grover;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+}
+
+.slide1-img {
+    width: 493px;
+    height: 730px;
+}
+
+.slide2-img{
+    width: 1660px;
+height: 720px;
+}

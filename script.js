@@ -26,7 +26,6 @@ let constitutionMod = addStat("constitution", "Телосложение", 2)
 let intelligenceMod = addStat("intelligence", "Интеллект", 3)
 let wisdomMod = addStat("wisdom", "Мудрость", 4)
 let charismaMod = addStat("charisma", "Харизма", 5)
-
 addHealPoint(maxDice8Value)
 getBackground('sample'/*generateDice(backgrounds.length-1, 1)*/).then(()=> {
   getSkill("Акробатика", dexterityMod, false)
@@ -48,9 +47,9 @@ getBackground('sample'/*generateDice(backgrounds.length-1, 1)*/).then(()=> {
   getSkill("Убеждение", charismaMod, false)
   getSkill("Уход за животными", wisdomMod, false)
 })
-getRace('gnome')
 
-getRandomBackground()
+addValue("passive_wisdom", `Пассивная мудрость (Восприятие): ${10+getSkill("Восприятие", wisdomMod, false)[0]}`)
+getRace('gnome')
 
 function addStat(_id, _value, _arrIndex) {
   let statMod = Math.floor((stats[_arrIndex] - 10) / 2)
@@ -94,7 +93,11 @@ function addRace(_jsonData) {
 }
 
 function addValue(_id, _value) {
-  document.getElementById(_id).innerHTML += _value
+  if(document.getElementById(_id).textContent != null && document.getElementById(_id).textContent == "")
+    document.getElementById(_id).innerHTML += _value
+  else {
+    console.log(document.getElementById(_id).textContent)
+  }
 }
 
 function addTraits(_jsonData, _traitsType) {
@@ -108,17 +111,22 @@ function addTraits(_jsonData, _traitsType) {
 
 
 function getSkill(_id, _statMod, _haveMaster) {
+  let value = ""
   if (!_haveMaster) {
-    if (document.getElementById(_id).textContent == "") {
+    if (!document.getElementById(_id).outerHTML.endsWith("</b></p>")) {
+      value = _statMod[0]
       console.log("Персонаж не владеет " + _id)
       addValue(_id, `[ ${_statMod[0]} ] ${_id} (${_statMod[2]})`)
+    } else {
+      _haveMaster = true
     }
   }
   else {
     console.log("Персонаж владеет " + _id)
+    value = _statMod[0] + 2
     addValue(_id, `<b>[ ${_statMod[0] + 2} ] ${_id} (${_statMod[2]})</b>`)
   }
-
+  return [value, _haveMaster]
 }
 
 async function getBackground(_backgroundName) {
@@ -154,5 +162,8 @@ async function getBackground(_backgroundName) {
         }
         getSkill(element.name, statMod, true)
       });
+      json.equipment.forEach(element => {
+        addValue("equip_background", element.name + ", ")
+      })
     })
 }

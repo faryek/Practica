@@ -2,48 +2,67 @@ console.log("script.js acrive")
 const maxDice6Value = 6
 const maxDice8Value = 8
 const stats = []
-const gameBackgrounds = ["Entertainer", "Sailor", "Pirate", "Outlander", "Urchin", "Sage", "Criminal", "Noble", "Folk hero", "Acolyte", "Guild artisan", "Hermit", "Soldier"]
+const backgrounds = ['Артист', 'Моряк', 'Пират', 'Чужеземец', 'Беспризорник', 'Мудрец', 'Преступник', 'Шарлатан', 'Благородный', 'Народный герой', 'Прислужник', ',Гильдейский ремесленник', 'Отшельник', 'Солдат']
 
 function generateDice(_maxDiceValue, _count) {
   if (_count == 0) return 0
   const randomNumbers = Array.from({ length: _count }, () => Math.floor(Math.random() * _maxDiceValue) + 1)
   let minNumber = Math.min(...randomNumbers)
   let sum = randomNumbers.reduce((acc, num) => acc + num, 0)
-
-  console.log(`array ${randomNumbers} Value ${sum} minNumber ${minNumber}`)
   const Value = sum - minNumber * (_count - 1)
   return Value
 }
 
 const Value = generateDice(6, 4);
-console.log("Final Value:", Value);
 
 
 for (let j = 0; j < 6; j++) {
   stats[j] = generateDice(maxDice6Value, 4)
-  console.log(stats[j])
 }
+
+let strengthMod = addStat("strength", "Сила", 0)
+let dexterityMod = addStat("dexterity", "Ловкость", 1)
+let constitutionMod = addStat("constitution", "Телосложение", 2)
+let intelligenceMod = addStat("intelligence", "Интеллект", 3)
+let wisdomMod = addStat("wisdom", "Мудрость", 4)
+let charismaMod = addStat("charisma", "Харизма", 5)
 
 addHealPoint(maxDice8Value)
+getBackground('sample'/*generateDice(backgrounds.length-1, 1)*/).then(()=> {
+  getSkill("Акробатика", dexterityMod, false)
+  getSkill("Анализ", intelligenceMod, false)
+  getSkill("Атлетика", strengthMod, false)
+  getSkill("Восприятие", wisdomMod, false)
+  getSkill("Выживание", wisdomMod, false)
+  getSkill("Выступление", charismaMod, false)
+  getSkill("Запугивание", charismaMod, false)
+  getSkill("История", intelligenceMod, false)
+  getSkill("Ловкость рук", dexterityMod, false)
+  getSkill("Магия", intelligenceMod, false)
+  getSkill("Медицина", wisdomMod, false)
+  getSkill("Обман", charismaMod, false)
+  getSkill("Природа", intelligenceMod, false)
+  getSkill("Проницательность", wisdomMod, false)
+  getSkill("Религия", intelligenceMod, false)
+  getSkill("Скрытность", dexterityMod, false)
+  getSkill("Убеждение", charismaMod, false)
+  getSkill("Уход за животными", wisdomMod, false)
+})
+getRace('gnome')
+
+getRandomBackground()
 
 function addStat(_id, _value, _arrIndex) {
-  document.getElementById(_id).innerText = `${_value}: [ ${Math.floor((stats[_arrIndex] - 10) / 2)} ] ( ${stats[_arrIndex]} )`
+  let statMod = Math.floor((stats[_arrIndex] - 10) / 2)
+  let statType = _value.substr(0, 3)
+  document.getElementById(_id).innerText = `${_value}: [ ${statMod} ] ( ${stats[_arrIndex]} )`
+  return [statMod, _value, statType]
 }
-
-addStat("strength", "Сила", 0)
-addStat("dexterity", "Ловкость", 1)
-addStat("constitution", "Телосложение", 2)
-addStat("intelligence", "Интеллект", 3)
-addStat("wisdom", "Мудрость", 4)
-addStat("charisma", "Харизма", 5)
 
 function addHealPoint(_diceValue) {
-  let healPoint = generateDice(_diceValue, 0) + Math.floor((stats[2] - 10) / 2) + _diceValue
+  let healPoint = generateDice(_diceValue, 0) + constitutionMod[0] + _diceValue
   document.getElementById("hp").innerText = `Хиты: ( ${healPoint} )`
 }
-
-addBackground(gameBackgrounds[generateDice(gameBackgrounds.length, 1)])
-getRace('gnome')
 
 
 function getRace(_raceName) {
@@ -55,9 +74,18 @@ function getRace(_raceName) {
       return response.json();
     })
     .then(json => {
-      addRace("Раса: " + json.name)
+      addRace(`Раса: ${json.name}<br>Размер существа: ${json.size}`)
       addTraits(json.traits, "raceTraits")
-      addTraits(json.subraces[generateDice(json.subraces.length, 1)-1].traits, "subraceTraits")
+      addValue("moveSpeed", `Скорость: ${json.speed}`)
+      addValue("languages", `Знание языков: ${json.languages}`)
+      if ('subraces' in json) {
+        let subraces = json.subraces
+        let currentSubrace = generateDice(subraces.length, 1) - 1
+        addTraits(subraces[currentSubrace].traits, "subraceTraits")
+        if (subraces[currentSubrace].proficiencies[0] != "-") {
+          addValue("tools", `${subraces[currentSubrace].proficiencies}`)
+        }
+      }
     })
 }
 
@@ -66,89 +94,65 @@ function addRace(_jsonData) {
 }
 
 function addValue(_id, _value) {
-  document.getElementById(_id).innerHTML = _value
+  document.getElementById(_id).innerHTML += _value
 }
 
-function addTraits (_jsonData, _traitsType) {
+function addTraits(_jsonData, _traitsType) {
   let resultString = ""
   let length = _jsonData.length
-  for(let i = 0; i < length; i++) {
-    resultString+= `<b>${i+1}. ${_jsonData[i].name}</b><br> ${_jsonData[i].description}<br>`
+  for (let i = 0; i < length; i++) {
+    resultString += `<b>${i + 1}. ${_jsonData[i].name}</b><br> ${_jsonData[i].description}<br>`
   }
   addValue(_traitsType, resultString)
 }
 
-function addBackground(_background) {
-  switch (_background) {
-    case "Entertainer":
-      addValue("goldValue", `Золотые монеты: [ 15 ]`)
-      addValue("acrobatics", `<b>[ ${Math.floor((stats[1] - 10) / 2) + 2} ] Акробатика (Лов)</b>`)
-      addValue("performance", `<b>[ ${Math.floor((stats[5] - 10) / 2) + 2} ] Выступление (Хар)</b>`)
-      break
-    case "Sailor":
-      addValue("goldValue", `Золотые монеты: [ 10 ]`)
-      addValue("athletics", `<b>[ ${Math.floor((stats[0] - 10) / 2) + 2} ] Атлетика (Сил)</b>`)
-      addValue("perception", `<b>[ ${Math.floor((stats[4] - 10) / 2) + 2} ] Восприятие (Муд)</b>`)
-      break
-    case "Pirate":
-      addValue("goldValue", `Золотые монеты: [ 10 ]`)
-      addValue("athletics", `<b>[ ${Math.floor((stats[0] - 10) / 2) + 2} ] Атлетика (Сил)</b>`)
-      addValue("perception", `<b>[ ${Math.floor((stats[4] - 10) / 2) + 2} ] Восприятие (Муд)</b>`)
-      break
-    case "Outlander":
-      addValue("goldValue", `Золотые монеты: [ 10 ]`)
-      addValue("athletics", `<b>[ ${Math.floor((stats[0] - 10) / 2) + 2} ] Атлетика (Сил)</b>`)
-      addValue("survival", `<b>[ ${Math.floor((stats[4] - 10) / 2) + 2} ] Выживание (Муд)</b>`)
-      break
-    case "Urchin":
-      addValue("goldValue", `Золотые монеты: [ 10 ]`)
-      addValue("sleightOfHand", `<b>[ ${Math.floor((stats[1] - 10) / 2) + 2} ] Ловкость рук (Лов)</b>`)
-      addValue("stealth", `<b>[ ${Math.floor((stats[1] - 10) / 2) + 2} ] Скрытность (Лов)</b>`)
-      break
-    case "Sage":
-      addValue("goldValue", `Золотые монеты: [ 10 ]`)
-      addValue("history", `<b>[ ${Math.floor((stats[3] - 10) / 2) + 2} ] История (Инт)</b>`)
-      addValue("magic", `<b>[ ${Math.floor((stats[1] - 10) / 2) + 2} ] Магия (Инт)</b>`)
-      break
-    case "Criminal":
-      addValue("goldValue", `Золотые монеты: [ 15 ]`)
-      addValue("deception", `<b>[ ${Math.floor((stats[5] - 10) / 2) + 2} ] Обман (Хар)</b>`)
-      addValue("stealth", `<b>[ ${Math.floor((stats[1] - 10) / 2) + 2} ] Скрытность (Лов)</b>`)
-      break
-    case "Charlatan":
-      addValue("goldValue", `Золотые монеты: [ 15 ]`)
-      addValue("sleightOfHand", `<b>[ ${Math.floor((stats[1] - 10) / 2) + 2} ] Ловкость рук (Лов)</b>`)
-      addValue("deception", `<b>[ ${Math.floor((stats[5] - 10) / 2) + 2} ] Обман (Хар)</b>`)
-      break
-    case "Noble":
-      addValue("goldValue", `Золотые монеты: [ 25 ]`)
-      addValue("history", `<b>[ ${Math.floor((stats[3] - 10) / 2) + 2} ] История (Инт)</b>`)
-      addValue("persuasion", `<b>[ ${Math.floor((stats[5] - 10) / 2) + 2} ] Убеждение (Хар)</b>`)
-      break
-    case "Folk hero":
-      addValue("goldValue", `Золотые монеты: [ 10 ]`)
-      addValue("survival", `<b>[ ${Math.floor((stats[4] - 10) / 2) + 2} ] Выживание (Муд)</b>`)
-      addValue("animalCare", `<b>[ ${Math.floor((stats[4] - 10) / 2) + 2} ] Уход за животными (Муд)</b>`)
-      break
-    case "Acolyte":
-      addValue("goldValue", `Золотые монеты: [ 15 ]`)
-      addValue("insight", `<b>[ ${Math.floor((stats[4] - 10) / 2) + 2} ] Проницательность (Муд)</b>`)
-      addValue("religion", `<b>[ ${Math.floor((stats[3] - 10) / 2) + 2} ] Религия (Инт)</b>`)
-      break
-    case "Guild artisan":
-      addValue("goldValue", `Золотые монеты: [ 15 ]`)
-      addValue("insight", `<b>[ ${Math.floor((stats[4] - 10) / 2) + 2} ] Проницательность (Муд)</b>`)
-      addValue("persuasion", `<b>[ ${Math.floor((stats[5] - 10) / 2) + 2} ] Убеждение (Хар)</b>`)
-      break
-    case "Hermit":
-      addValue("goldValue", `Золотые монеты: [ 5 ]`)
-      addValue("medicine", `<b>[ ${Math.floor((stats[4] - 10) / 2) + 2} ] Медицина (Муд)</b>`)
-      addValue("religion", `<b>[ ${Math.floor((stats[3] - 10) / 2) + 2} ] Религия (Инт)</b>`)
-      break
-    case "Soldier":
-      addValue("goldValue", `Золотые монеты: [ 10 ]`)
-      addValue("athletics", `<b>[ ${Math.floor((stats[0] - 10) / 2) + 2} ] Атлетика (Сил)</b>`)
-      addValue("intimidation", `<b>[ ${Math.floor((stats[5] - 10) / 2) + 2} ] Запугивание (Хар)</b>`)
-      break
+
+function getSkill(_id, _statMod, _haveMaster) {
+  if (!_haveMaster) {
+    if (document.getElementById(_id).textContent == "") {
+      console.log("Персонаж не владеет " + _id)
+      addValue(_id, `[ ${_statMod[0]} ] ${_id} (${_statMod[2]})`)
+    }
   }
+  else {
+    console.log("Персонаж владеет " + _id)
+    addValue(_id, `<b>[ ${_statMod[0] + 2} ] ${_id} (${_statMod[2]})</b>`)
+  }
+
+}
+
+async function getBackground(_backgroundName) {
+  await fetch(`./Data/Background/${_backgroundName}.json`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("HTTP error " + response.status);
+      }
+      return response.json();
+    })
+    .then(json => {
+      let statMod
+      json.abilities.forEach(element => {
+        switch (element.statMod) {
+          case "Сила":
+            statMod = strengthMod
+            break
+          case "Ловкость":
+            statMod = dexterityMod
+            break
+          case "Телосложение":
+            statMod = constitutionMod
+            break
+          case "Интеллект":
+            statMod = intelligenceMod
+            break
+          case "Мудрость":
+            statMod = wisdomMod
+            break
+          case "Харизма":
+            statMod = charismaMod
+            break
+        }
+        getSkill(element.name, statMod, true)
+      });
+    })
 }

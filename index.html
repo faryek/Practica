@@ -129,7 +129,7 @@
         <div class="row">
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding-left: 10px; padding-top: 10px;">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4>Значения Характеристик:</h4>
                 <p id="strength">Сила: [ 2 ] ( 14 )</p>
                 <p id="dexterity">Ловкость: [ 3 ] (16)</p>
@@ -142,8 +142,8 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding-left: 10px; padding-top: 10px;">
-                <h4 id="hp">Хиты: [ 9 ]</h4>
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4 id="hp"></h4>
                 <h5>Кость Хитов: [ 1к8 ]</h5>
                 <p>Всего Костей Хитов:[ 1 ]</p>
                 <p>Вдохновение: [ Нет ]</p>
@@ -152,13 +152,13 @@
                 <p>Доспех: [ "Кожаный доспех" ]</p>
                 <p>Класс Доспеха: [ 14 ]</p>
                 <p>Инициатива: [ D20 + мод_ЛОВ ]</p>
-                <p>Скорость: [ 30 ]</p>
+                <p id="moveSpeed"></p>
               </div>
             </div>
           </div>
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding-left: 10px; padding-top: 10px;">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4>Монеты:</h4>
                 <p>Медные монеты: [ 0 ]</p>
                 <p>Серебряные монеты: [ 0 ]</p>
@@ -171,32 +171,32 @@
           <div class="w-100"></div>
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding-left: 10px; padding-top: 10px;">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4>Навыки:</h4>
-                <p id="acrobatics">[ 5 ] Акробатика (Лов)</p>
-                <p>[ 2 ] Анализ (Инт)</p>
-                <p id="athletics">[ 2 ] Атлетика (Сил)</p>
-                <p id="perception">[ 3 ] Восприятие (Муд)</p>
-                <p id="survival">[ 5 ] Выживание (Муд)</p>
-                <p id="performance">[ 4 ] Выступление (Хар)</p>
-                <p id="intimidation">[ 4 ] Запугивание (Хар)</p>
-                <p id="history">[ 2 ] История (Инт)</p>
-                <p id="sleightOfHand">[ 3 ] Ловкость рук (Лов)</p>
-                <p id="magic">[ 2 ] Магия (Инт)</p>
-                <p id="medicine">[ 1 ] Медицина (Муд)</p>
-                <p id="deception">[ 2 ] Обман (Хар)</p>
-                <p>[ 2 ] Природа (Инт)</p>
-                <p id="insight">[ 1 ] Проницательность (Муд)</p>
-                <p id="religion">[ 2 ] Религия (Инт)</p>
-                <p id="stealth">[ 3 ] Скрытность (Лов)</p>
-                <p id="persuasion">[ 6 ] Убеждение (Хар)</p>
-                <p id="animalCare">[ 1 ] Уход за животными (Муд)</p>
+                <p id="Акробатика"></p>
+                <p id="Анализ"></p>
+                <p id="Атлетика"></p>
+                <p id="Восприятие"></p>
+                <p id="Выживание"></p>
+                <p id="Выступление"></p>
+                <p id="Запугивание"></p>
+                <p id="История"></p>
+                <p id="Ловкость рук"></p>
+                <p id="Магия"></p>
+                <p id="Медицина"></p>
+                <p id="Обман"></p>
+                <p id="Природа"></p>
+                <p id="Проницательность"></p>
+                <p id="Религия"></p>
+                <p id="Скрытность"></p>
+                <p id="Убеждение"></p>
+                <p id="Уход за животными"></p>
               </div>
             </div>
           </div>
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding-left: 10px; padding-top: 10px;">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4>Спас-броски:</h4>
                 <p>Сила: [ 1 ]</p>
                 <p>Ловкость: [ Нет ]</p>
@@ -209,14 +209,13 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding-left: 10px; padding-top: 10px;">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4>Прочие Владения и Языки:</h4>
-                <p>Знание языков: [ Общий, Орочий, Эльфийский ]</p>
+                <p id="languages"></p>
                 <p>Сопротивляемость к: [ Нет ]</p>
                 <p>Доспехи: [ Лёгкие доспехи ]</p>
                 <p>Оружие: [ Простое оружие, ручные арбалеты, длинные мечи, рапиры, короткие мечи ]</p>
-                <p>Инструменты от класса: [ Воровские инструменты ]</p>
-                <p>Инструменты от предыстории: [ Один вид музыкального инструмента ]</p>
+                <p id="tools">Инструменты: </p>
               </div>
             </div>
           </div>
@@ -228,7 +227,7 @@
         <div class="row">
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding-left: 10px; padding-top: 10px;">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4>Снаряжение:</h4>
                 <p>Снаряжение от предыстории:</p>
                 <p>[Посох, Капкан, Трофей с убитого животного, Комплект дорожной одежды, Поясной кошель с 10 зм]</p>
@@ -240,7 +239,7 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding: 10px">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4 id="race">Раса: </h4>
                 <h5>Особенности расы:</h5>
                 <p id="raceTraits"></p>
@@ -251,7 +250,7 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding-left: 10px; padding-top: 10px;">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4>Монеты:</h4>
                 <h5>Всего денег (в золоте) [ 10 ]</h5>
                 <p>Медные монеты: [ 0 ]</p>
@@ -265,7 +264,7 @@
           <div class="w-100"></div>
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding-left: 10px; padding-top: 10px;">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4>Навыки:</h4>
                 <p>[ 5 ] Акробатика (Лов)</p>
                 <p>[ 2 ] Анализ (Инт)</p>
@@ -290,7 +289,7 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding-left: 10px; padding-top: 10px;">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4>Хиты: [ 9 ]</h4>
                 <h5>Кость Хитов: [ 1к8 ]</h5>
                 <p>Всего Костей Хитов:[ 1 ]</p>
@@ -306,7 +305,7 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="field-background">
-              <div class="row" style="padding-left: 10px; padding-top: 10px;">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4>Монеты:</h4>
                 <h5>Всего денег (в золоте) [ 10 ]</h5>
                 <p>Медные монеты: [ 0 ]</p>

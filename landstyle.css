@@ -16,6 +16,12 @@ h1,
 h2 {
     font-family: 'IrishGrover-Regular';
     text-align: end;
+    color: #FFF;
+    font-size: 3.4vw;
+}
+
+.header {
+    margin-bottom: 40px;
 }
 
 .button {
@@ -58,29 +64,71 @@ h2 {
     height: 930px;
 }
 
-.swiper-slide {
+
+
+.slide-item {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .slide1-text {
     width: 960px;
-    height: 930px;
+
     color: #FFF;
 
     font-family: Irish Grover;
-    font-size: 64px;
+    font-size: 3vw;
     font-style: normal;
     font-weight: 400;
     line-height: 135%;
 }
 
 .slide1-img {
-    width: 493px;
+    object-fit: contain;
+    width: 40vw !important;
     height: 730px;
 }
 
-.slide2-img{
-    width: 1660px;
-height: 720px;
+.slide2-img {
+    object-fit: contain;
+    width: 100% !important;
+    height: 730px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.info-text {
+    color: #FFF;
+
+    font-family: Irish Grover;
+    font-size: 3vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+}
+
+.cards-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+.card {
+    background-color: transparent;
+}
+
+h3 {
+    font-family: 'IrishGrover-Regular';
+    text-align: center;
+    color: #FFF;
+    font-size: 3.4vw;
 }

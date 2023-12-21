@@ -9,15 +9,19 @@
 }
 
 body {
-    background: linear-gradient(180deg, #8E0000 0%, #000 100%);
+    background: linear-gradient(180deg, #8888ff 0%, rgb(39, 39, 39) 100%);
 }
 
 h1,
 h2 {
     font-family: 'IrishGrover-Regular';
     text-align: end;
-    color: #FFF;
-    font-size: 3.4vw;
+    color: #000;
+    font-size: 2vw;
+}
+
+h1 {
+    font-size: 3vw;
 }
 
 .header {
@@ -119,12 +123,30 @@ h2 {
     display: flex;
     flex-direction: row;
     width: 100%;
-
+    gap: 0.5vw;
 }
 
 .card {
-    background-color: transparent;
+    background: transparent;
+    width: 100%;
 }
+
+.card-border{
+    padding: 0.4vw;
+    width: 20%;
+    background: linear-gradient(#BC883B, #00000000);
+}
+
+.card-text {
+    z-index: 2;
+    position: absolute;
+    color: rgba(255, 180, 67, 0);
+    margin: 5%;
+    font-family: Irish Grover;
+    font-size: 1.5vw;
+}
+
+
 
 h3 {
     font-family: 'Ruda';
@@ -132,3 +154,4 @@ h3 {
     color: #FFF;
     font-size: 3vw;
 }
+

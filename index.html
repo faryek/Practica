@@ -144,7 +144,7 @@
             <div class="field-background">
               <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4 id="hp"></h4>
-                <h5>Кость Хитов: [ 1к8 ]</h5>
+                <h5 id="hp_dice"></h5>
                 <p>Всего Костей Хитов:[ 1 ]</p>
                 <p>Вдохновение: [ Нет ]</p>
                 <p>Бонус мастерства: [ +2 ]</p>
@@ -162,7 +162,7 @@
                 <h4>Монеты:</h4>
                 <p>Медные монеты: [ 0 ]</p>
                 <p>Серебряные монеты: [ 0 ]</p>
-                <p id="goldValue">Золотые монеты: [ 10 ]</p>
+                <p id="goldValue"></p>
                 <p>Электромовые монеты: [ 0 ]</p>
                 <p>Платиновые монеты: [ 0 ]</p>
               </div>
@@ -198,12 +198,12 @@
             <div class="field-background">
               <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
                 <h4>Спас-броски:</h4>
-                <p>Сила: [ 1 ]</p>
-                <p>Ловкость: [ Нет ]</p>
-                <p>Телосложение: [ +2 ]</p>
-                <p>Интеллект: [ 13 ]</p>
-                <p>Мудрость: [ 6 ]</p>
-                <p>Харизма: [ 14 ]</p>
+                <p id="strength_save"></p>
+                <p id="dexterity_save"></p>
+                <p id="constitution_save"></p>
+                <p id="intelligence_save"></p>
+                <p id="wisdom_save"></p>
+                <p id="charisma_save"></p>
               </div>
             </div>
           </div>
@@ -215,7 +215,7 @@
                 <p>Сопротивляемость к: [ Нет ]</p>
                 <p>Доспехи: [ Лёгкие доспехи ]</p>
                 <p>Оружие: [ Простое оружие, ручные арбалеты, длинные мечи, рапиры, короткие мечи ]</p>
-                <p id="tools">Инструменты: </p>
+                <p id="tools"></p>
               </div>
             </div>
           </div>
@@ -232,15 +232,14 @@
                 <p>Снаряжение от предыстории:</p>
                 <p id="equip_background"></p>
                 <p>Снаряжение от класса:</p>
-                <p>[Короткий меч, Короткий меч, Набор исследователя подземелий, Кожаный доспех, Кинжал (2), Воровские
-                  инструменты]</p>
+                <p id="equip_class"></p>
               </div>
             </div>
           </div>
           <div class="col-12 col-md-4">
             <div class="field-background">
               <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
-                <h4 id="race">Раса: </h4>
+                <h4 id="race"></h4>
                 <h5>Особенности расы:</h5>
                 <p id="raceTraits"></p>
                 <h5>Особенности подрасы:</h5>

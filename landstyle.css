@@ -42,6 +42,7 @@ button {
     line-height: normal;
 }
 
+
 .btn-light {
     border-radius: 10px;
     border-width: 0px;
@@ -69,7 +70,15 @@ button {
     margin-bottom: 90px;
 }
 
+.swiper-wrapper{
+    gap: 10px;
+}
 
+.swiper-button-prev::after,
+.swiper-button-next::after{
+    color: #FFF;
+    font-size: 4vw;
+}
 
 .slide-item {
     display: flex;
@@ -79,8 +88,8 @@ button {
     height: 100%;
 }
 
-.slide1-text {
-    width: 960px;
+.slide-text {
+    width: 100%;
 
     color: #FFF;
 
@@ -93,14 +102,13 @@ button {
 
 .slide1-img {
     object-fit: contain;
-    width: 40vw !important;
-    height: 730px;
+    width: 50vw;
 }
 
 .slide2-img {
     object-fit: contain;
-    width: 100% !important;
-    height: 730px;
+    width: 100%;
+    height: 45.6vw;
 }
 
 .info {

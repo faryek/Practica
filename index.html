@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="D&DGen - это замечательный сайт для генерации персонажей 1 уровня для настольно ролевой игры Dungeons and Dragons 5 редакции.">
+  <meta property="og:title"
+    content="Быстрая генерация персонажа 1 уровня для Dungeons and Dragons без лишних заморочек">
+  <meta property="og:image" content="Img/Logo.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>D&DGen</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="row text-end">
+                <h1 class="project_name">dndGenerator</h1>
+                <h2 class="project_slogan">roll the dice</h2>
+                <div class="col ">
+                  <div class="row mx-auto">
+                    <div class="col-12 col-md-4 mt-2 "><button type="button"
+                        class="btn btn-light w-100">Главная</button></div>
+                    <div class="col-12 col-md-4 mt-2 text-center"><button type="button"
+                        class="btn btn-light w-100">Генератор</button></div>
+                    <div class="col-12 col-md-4 mt-2 text-center"><button type="button" class="btn btn-light w-100">О
+                        нас</button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <img class="col-5" src="./Img/Logo.svg" alt="Logo">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container text-start">
+    <div class="row g-3">
+      <div class="col-4 col-md-1">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Раса
+          </button>
+          <ul class="dropdown-menu">
+            <li><button class="dropdown-item" type="button">Гном</button></li>
+            <li><button class="dropdown-item" type="button">Дварф</button></li>
+            <li><button class="dropdown-item" type="button">Драконорожденный</button></li>
+            <li><button class="dropdown-item" type="button">Полуорк</button></li>
+            <li><button class="dropdown-item" type="button">полурослик</button></li>
+            <li><button class="dropdown-item" type="button">Полуэльф</button></li>
+            <li><button class="dropdown-item" type="button">Тифлинг</button></li>
+            <li><button class="dropdown-item" type="button">Человек</button></li>
+            <li><button class="dropdown-item" type="button">Эльф</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-4 col-md-1">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Класс
+          </button>
+          <ul class="dropdown-menu">
+            <li><button class="dropdown-item" type="button">Бард</button></li>
+            <li><button class="dropdown-item" type="button">Варвар</button></li>
+            <li><button class="dropdown-item" type="button">Воин</button></li>
+            <li><button class="dropdown-item" type="button">Волшебник</button></li>
+            <li><button class="dropdown-item" type="button">Друид</button></li>
+            <li><button class="dropdown-item" type="button">Жрец</button></li>
+            <li><button class="dropdown-item" type="button">Изобретатель</button></li>
+            <li><button class="dropdown-item" type="button">Колдун</button></li>
+            <li><button class="dropdown-item" type="button">Монах</button></li>
+            <li><button class="dropdown-item" type="button">Паладин</button></li>
+            <li><button class="dropdown-item" type="button">Плут</button></li>
+            <li><button class="dropdown-item" type="button">Следопыт</button></li>
+            <li><button class="dropdown-item" type="button">Чародей</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-4 col-md-1">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Уровень
+          </button>
+          <ul class="dropdown-menu">
+            <li><button class="dropdown-item" type="button">1</button></li>
+            <li><button class="dropdown-item" type="button">2</button></li>
+            <li><button class="dropdown-item" type="button">3</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6 col-md-7 text-end p-0">
+        <div class="action">
+          <button class="btn btn-success w-100" type="button">Генерация</button>
+        </div>
+      </div>
+      <div class="col p-0 text-start">
+        <div class="action">
+          <button class="btn btn-info w-100" type="button">Импорт в LSS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#first-tab-content"
+        type="button" role="tab" aria-controls="first-tab-content" aria-selected="true" style="color: #02ff70;">Статы</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#second-tab-content"
+        type="button" role="tab" aria-controls="second-tab-conten" aria-selected="false" style="color: #02ff70;">Личность</button>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-content-example">
+    <div class="tab-pane fade show active" id="first-tab-content" role="tabpanel" aria-labelledby="first-tab">
+      <div class="container text-start">
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <div class="field-background">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4>Значения Характеристик:</h4>
+                <p id="strength"></p>
+                <p id="dexterity"></p>
+                <p id="constitution"></p>
+                <p id="intelligence"></p>
+                <p id="wisdom"></p>
+                <p id="charisma"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="field-background">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4 id="hp"></h4>
+                <h5 id="hp_dice"></h5>
+                <p>Всего Костей Хитов:[ 1 ]</p>
+                <p>Вдохновение: [ Нет ]</p>
+                <p>Бонус мастерства: [ +2 ]</p>
+                <p id="passive_wisdom"></p>
+                <p>Доспех: [ "Кожаный доспех" ]</p>
+                <p>Класс Доспеха: [ 14 ]</p>
+                <p>Инициатива: [ D20 + мод_ЛОВ ]</p>
+                <p id="moveSpeed"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="field-background">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4>Монеты:</h4>
+                <p>Медные монеты: [ 0 ]</p>
+                <p>Серебряные монеты: [ 0 ]</p>
+                <p id="goldValue"></p>
+                <p>Электромовые монеты: [ 0 ]</p>
+                <p>Платиновые монеты: [ 0 ]</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-12 col-md-4">
+            <div class="field-background">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4>Навыки:</h4>
+                <p id="Акробатика"></p>
+                <p id="Анализ"></p>
+                <p id="Атлетика"></p>
+                <p id="Восприятие"></p>
+                <p id="Выживание"></p>
+                <p id="Выступление"></p>
+                <p id="Запугивание"></p>
+                <p id="История"></p>
+                <p id="Ловкость рук"></p>
+                <p id="Магия"></p>
+                <p id="Медицина"></p>
+                <p id="Обман"></p>
+                <p id="Природа"></p>
+                <p id="Проницательность"></p>
+                <p id="Религия"></p>
+                <p id="Скрытность"></p>
+                <p id="Убеждение"></p>
+                <p id="Уход за животными"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="field-background">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4>Спас-броски:</h4>
+                <p id="strength_save"></p>
+                <p id="dexterity_save"></p>
+                <p id="constitution_save"></p>
+                <p id="intelligence_save"></p>
+                <p id="wisdom_save"></p>
+                <p id="charisma_save"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="field-background">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4>Прочие Владения и Языки:</h4>
+                <p id="languages"></p>
+                <p>Сопротивляемость к: [ Нет ]</p>
+                <p>Доспехи: [ Лёгкие доспехи ]</p>
+                <p>Оружие: [ Простое оружие, ручные арбалеты, длинные мечи, рапиры, короткие мечи ]</p>
+                <p id="tools"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="second-tab-content" role="tabpanel" aria-labelledby="second-tab" data-toggle="tab">
+      <div class="container text-start">
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <div class="field-background">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4>Снаряжение:</h4>
+                <p>Снаряжение от предыстории:</p>
+                <p id="equip_background"></p>
+                <p>Снаряжение от класса:</p>
+                <p id="equip_class"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="field-background">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4 id="race"></h4>
+                <h5>Особенности расы:</h5>
+                <p id="raceTraits"></p>
+                <h5>Особенности подрасы:</h5>
+                <p id="subraceTraits"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="field-background" id="ability">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+              </div>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-12 col-md-4">
+            <div class="field-background">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4>Навыки:</h4>
+                <p>[ 5 ] Акробатика (Лов)</p>
+                <p>[ 2 ] Анализ (Инт)</p>
+                <p>[ 2 ] Атлетика (Сил)</p>
+                <p><b>[ 3 ] Восприятие (Муд)</b></p>
+                <p>[ 5 ] Выживание (Муд)</p>
+                <p>[ 4 ] Выступление (Хар)</p>
+                <p>[ 4 ] Запугивание (Хар)</p>
+                <p>[ 2 ] История (Инт)</p>
+                <p><b>[ 3 ] Ловкость рук (Лов)</b></p>
+                <p>[ 2 ] Магия (Инт)</p>
+                <p>[ 1 ] Медицина (Муд)</p>
+                <p>[ 2 ] Обман (Хар)</p>
+                <p>[ 2 ] Природа (Инт)</p>
+                <p>[ 1 ] Проницательность (Муд)</p>
+                <p>[ 2 ] Религия (Инт)</p>
+                <p><b>[ 3 ] Скрытность (Лов)</b></p>
+                <p><b>[ 6 ] Убеждение (Хар)</b></p>
+                <p>[ 1 ] Уход за животными (Муд)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="field-background">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4>Хиты: [ 9 ]</h4>
+                <h5>Кость Хитов: [ 1к8 ]</h5>
+                <p>Всего Костей Хитов:[ 1 ]</p>
+                <p>Вдохновение: [ Нет ]</p>
+                <p>Бонус мастерства: [ +2 ]</p>
+                <p>Пассивная мудрость (Восприятие): [ 13 ]</p>
+                <p>Доспех: [ "Кожаный доспех" ]</p>
+                <p>Класс Доспеха: [ 14 ]</p>
+                <p>Инициатива: [ D20 + мод_ЛОВ ]</p>
+                <p>Скорость: [ 30 ]</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="field-background">
+              <div class="row" style="padding: 10px; height: 500px; overflow-y: scroll;">
+                <h4>Монеты:</h4>
+                <h5>Всего денег (в золоте) [ 10 ]</h5>
+                <p>Медные монеты: [ 0 ]</p>
+                <p>Серебряные монеты: [ 0 ]</p>
+                <p>Золотые монеты: [ 10 ]</p>
+                <p>Электромовые монеты: [ 0 ]</p>
+                <p>Платиновые монеты: [ 0 ]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="background-color: #28005067; height: 6px; width: 100%; margin-top: 140px;"></div>
+  <div class="container d-flex p-0" style="max-width: 100%;">
+    <div class="row text-center align-items-center w-100"
+      style="min-height: 180px; justify-content: center; background-image: linear-gradient(to bottom, #323232, #000);">
+      <div class="col">
+        <p style="color: white;">Главная</p>
+      </div>
+      <div class="col">
+        <p style="color: white;">Генератор</p>
+      </div>
+      <div class="col">
+        <p style="color: white;">О нас</p>
+      </div>
+      <div class="col">
+        <div class="row" style="align-items: stretch;">
+          <div class="col">
+            <p style="color: white;">dndgen@mail.ru</p>
+            <p style="color: white;">+7 800 555 35 35</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="row">
+          <div class="col-4 p-0">
+            <img src="./Img/disc.svg" alt="discord">
+          </div>
+          <div class="col-4 p-0">
+            <img src="./Img/vk.svg" alt="vk">
+          </div>
+          <div class="col-4 p-0">
+            <img src="./Img/Logo.svg" alt="logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

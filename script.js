@@ -1,13 +1,14 @@
 console.log("script.js acrive")
 const stats = []
 const backgrounds = ['Артист', 'sample'/*'Моряк', 'Пират', 'Чужеземец', 'Беспризорник', 'Мудрец', 'Преступник', 'Шарлатан', 'Благородный', 'Народный герой', 'Прислужник', ',Гильдейский ремесленник', 'Отшельник', 'Солдат'*/]
+const classes = ['sample', 'sample']
 
 function generateDice(_maxDiceValue, _count = 1) {
   if (_count == 0) return 0
   const randomNumbers = Array.from({ length: _count }, () => Math.floor(Math.random() * _maxDiceValue) + 1)
   let minNumber = Math.min(...randomNumbers)
   let sum = randomNumbers.reduce((acc, num) => acc + num, 0)
-  if(_count != 1)
+  if (_count != 1)
     return sum - minNumber
   else
     return sum
@@ -79,7 +80,7 @@ function getRace(_raceName) {
       addValue("languages", `Знание языков: ${json.languages}`)
       if ('subraces' in json) {
         let subraces = json.subraces
-        let currentSubrace = generateDice(subraces.length, 1)-1
+        let currentSubrace = generateDice(subraces.length, 1) - 1
         addTraits(subraces[currentSubrace].traits, "subraceTraits")
         if (subraces[currentSubrace].proficiencies[0] != "-") {
           let backTools = getValue("tools")
@@ -234,11 +235,37 @@ async function getClass(_className) {
         addValue("equip_class", ", ", element[generateDice(element.length)])
       });
       getCurrentSkill(json)
+
+      const ability_field = document.getElementById("ability").children[0]
+
+      json.lvl_1.forEach(element => {
+        const ability_name = document.createElement('h4')
+        const ability_value_name = document.createElement('p')
+        
+
+        ability_name.id = element.name
+        ability_value_name.id = element.description
+        
+        ability_field.append(ability_name)
+        ability_field.append(ability_value_name)
+        addValue(ability_name.id, `Умение 1 уровня ${element.name}:`)
+        addValue(ability_value_name.id, element.description)
+      })
+
+      const description_values_field_name = document.createElement('h5')
+      const description_values_field_description = document.createElement('p')
+      let description_value = json.lvl_1[0].description_values[generateDice(json.lvl_1[0].description_values.length)-1]
+      description_values_field_name.id = description_value.name
+      description_values_field_description.id = description_value.name + "_description"
+      ability_field.append(description_values_field_name)
+      ability_field.append(description_values_field_description)
+      addValue(description_values_field_name.id, description_value.name)
+      addValue(description_values_field_description.id, description_value.description)
     })
 
   function getCurrentSkill(json) {
     for (let i = 0; i < json.skill_count; i++) {
-      let currentSkill = json.skills[generateDice(json.skills.length, 1)-1]
+      let currentSkill = json.skills[generateDice(json.skills.length, 1) - 1]
       let currentAbility = getValue(currentSkill[0]) || ""
       if (currentAbility == "" || currentAbility == null || currentAbility == undefined || currentAbility == '0') {
         let statMod
@@ -267,4 +294,8 @@ async function getClass(_className) {
       else setTimeout(getCurrentSkill, 1000, json)
     }
   }
+}
+
+async function getRandomClass(_value) {
+  await getClass(classes[_value])
 }

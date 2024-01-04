@@ -1,0 +1,166 @@
+@font-face {
+    font-family: "IrishGrover-Regular";
+    src: url("Fonts/IrishGrover-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Ruda";
+    src: url("./Fonts/Ruda.ttf");
+}
+
+body {
+    background: linear-gradient(180deg, #8888ff 0%, rgb(39, 39, 39) 100%);
+}
+
+h1,
+h2 {
+    font-family: 'IrishGrover-Regular';
+    text-align: end;
+    color: #000;
+    font-size: 2vw;
+}
+
+h1 {
+    font-size: 3vw;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+button {
+    border-radius: 15px;
+    border-right: 4px solid #000;
+    border-bottom: 4px solid #000;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(206, 117, 117, 0.70) 100%);
+    color: black;
+    box-shadow: 9px 7px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-family: "Ruda";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.btn-light {
+    border-radius: 10px;
+    border-width: 0px;
+    background-color: #d5d5ff;
+}
+
+.btn-light:disabled {
+    background-color: #6f6fff;
+    color: #fff;
+}
+
+.nav-tabs .nav-item .nav-link {
+    background-color: #bbbbff;
+    color: black;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+    background-color: #d5d5ff;
+    color: black;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 90px;
+}
+
+.swiper-wrapper{
+    gap: 10px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after{
+    color: #FFF;
+    font-size: 4vw;
+}
+
+.slide-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.slide-text {
+    width: 100%;
+
+    color: #FFF;
+
+    font-family: Irish Grover;
+    font-size: 3vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+}
+
+.slide1-img {
+    object-fit: contain;
+    width: 50vw;
+}
+
+.slide2-img {
+    object-fit: contain;
+    width: 100%;
+    height: 45.6vw;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 90px;
+}
+
+.info-text {
+    color: #FFF;
+
+    font-family: Irish Grover;
+    font-size: 3vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+}
+
+.cards-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 0.5vw;
+}
+
+.card {
+    background: transparent;
+    width: 100%;
+}
+
+.card-border{
+    padding: 0.4vw;
+    width: 20%;
+    background: linear-gradient(#BC883B, #00000000);
+}
+
+.card-text {
+    z-index: 2;
+    position: absolute;
+    color: rgba(255, 180, 67, 0);
+    margin: 5%;
+    font-family: Irish Grover;
+    font-size: 1.5vw;
+}
+
+
+
+h3 {
+    font-family: 'Ruda';
+    text-align: center;
+    color: #FFF;
+    font-size: 3vw;
+}
+

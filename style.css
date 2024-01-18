@@ -24,7 +24,7 @@ h1, h2 {
     font-family: 'IrishGrover-Regular';
     text-align: end;
 }
-.button {
+button {
     border-radius: 15px;
     border-right: 4px solid #000;
     border-bottom: 4px solid #000;

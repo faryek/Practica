@@ -70,12 +70,12 @@ button {
     margin-bottom: 90px;
 }
 
-.swiper-wrapper{
+.swiper-wrapper {
     gap: 10px;
 }
 
 .swiper-button-prev::after,
-.swiper-button-next::after{
+.swiper-button-next::after {
     color: #FFF;
     font-size: 4vw;
 }
@@ -140,9 +140,9 @@ button {
     width: 100%;
 }
 
-.card-border{
+.card-border {
     padding: 0.4vw;
-    width: 20%;
+    width: 50%;
     background: linear-gradient(#BC883B, #00000000);
 }
 
@@ -161,6 +161,11 @@ h3 {
     font-family: 'Ruda';
     text-align: center;
     color: #FFF;
+    
     font-size: 3vw;
 }
 
+.about-text p{
+    font-size: 2vw;
+    color: #fff;
+}
